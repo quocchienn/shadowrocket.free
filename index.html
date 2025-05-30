@@ -3,119 +3,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shadowrocket Unlock Pro Apps</title>
+    <title>Shadowrocket Unlock Pro Apps - Enhanced</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        body {
-            background-color: #f2f2f2;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726, #ffee58, #66bb6a, #42a5f5, #ab47bc, #ff6b6b);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
             color: #333;
+            overflow-x: hidden;
+            position: relative;
         }
 
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Enhanced particles with different shapes and colors */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .particle.circle {
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .particle.square {
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 107, 107, 0.6);
+            border-radius: 0;
+            transform: rotate(45deg);
+        }
+
+        .particle.triangle {
+            width: 0;
+            height: 0;
+            border-left: 2px solid transparent;
+            border-right: 2px solid transparent;
+            border-bottom: 4px solid rgba(66, 165, 245, 0.6);
+            background: transparent;
+            border-radius: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg) scale(1); 
+                opacity: 1; 
+            }
+            25% { 
+                transform: translateY(-50px) rotate(90deg) scale(1.2); 
+                opacity: 0.8; 
+            }
+            50% { 
+                transform: translateY(-100px) rotate(180deg) scale(0.8); 
+                opacity: 0.5; 
+            }
+            75% { 
+                transform: translateY(-50px) rotate(270deg) scale(1.1); 
+                opacity: 0.7; 
+            }
+        }
+
+        /* Dark mode support */
         @media (prefers-color-scheme: dark) {
             body {
-                background-color: #333;
-                color: #f2f2f2;
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             }
             .container {
-                background-color: #444;
+                background: rgba(44, 62, 80, 0.95);
+                border: 1px solid rgba(255, 255, 255, 0.1);
             }
-            .redirect-button {
-                background-color: #ff6347;
+            .particle {
+                background: rgba(52, 152, 219, 0.6);
             }
-        }
-
-        @keyframes rainbow {
-            0% { color: red; }
-            14% { color: orange; }
-            42% { color: green; }
-            57% { color: blue; }
-            71% { color: indigo; }
-            100% { color: red; }
-        }
-
-        .rainbow-text {
-            animation: rainbow 6s infinite; 
         }
 
         .container {
-            max-width: 400px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            max-width: 450px;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(25px);
+            border-radius: 25px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: slideInUp 0.8s ease-out;
         }
 
-        h1, p {
-            margin: 0;
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced rainbow animation with more vibrant colors */
+        @keyframes rainbow {
+            0% { 
+                color: #ff6b6b; 
+                text-shadow: 0 0 20px rgba(255, 107, 107, 0.8), 0 0 40px rgba(255, 107, 107, 0.4); 
+            }
+            16% { 
+                color: #ffa726; 
+                text-shadow: 0 0 20px rgba(255, 167, 38, 0.8), 0 0 40px rgba(255, 167, 38, 0.4); 
+            }
+            33% { 
+                color: #ffee58; 
+                text-shadow: 0 0 20px rgba(255, 238, 88, 0.8), 0 0 40px rgba(255, 238, 88, 0.4); 
+            }
+            50% { 
+                color: #66bb6a; 
+                text-shadow: 0 0 20px rgba(102, 187, 106, 0.8), 0 0 40px rgba(102, 187, 106, 0.4); 
+            }
+            66% { 
+                color: #42a5f5; 
+                text-shadow: 0 0 20px rgba(66, 165, 245, 0.8), 0 0 40px rgba(66, 165, 245, 0.4); 
+            }
+            83% { 
+                color: #ab47bc; 
+                text-shadow: 0 0 20px rgba(171, 71, 188, 0.8), 0 0 40px rgba(171, 71, 188, 0.4); 
+            }
+            100% { 
+                color: #ff6b6b; 
+                text-shadow: 0 0 20px rgba(255, 107, 107, 0.8), 0 0 40px rgba(255, 107, 107, 0.4); 
+            }
+        }
+
+        .rainbow-text {
+            animation: rainbow 2s infinite;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            font-weight: bold;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .emoji {
+            font-size: 32px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+            margin: 0 5px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
 
         p {
             font-size: 16px;
-            margin-bottom: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
 
         .button {
             display: inline-block;
-            padding: 8px 16px; 
-            font-size: 14px;
+            padding: 15px 25px;
+            font-size: 16px;
+            font-weight: 600;
             text-decoration: none;
-            border-radius: 50px;
-            margin-top: 10px;
-            transition: background-color 0.3s;
+            border-radius: 15px;
+            margin: 8px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            min-width: 200px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .redirect-button {
-            background-color: #007bff;
-            color: #fff;
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
         }
 
-        .redirect-button:hover {
-            background-color: #0056b3;
+        .button:hover::before {
+            left: 100%;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:active {
+            transform: translateY(-1px);
         }
 
         .install-button {
-            background-color: #28a745;
+            background: linear-gradient(45deg, #28a745, #20c997);
             color: #fff;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
         }
 
         .install-button:hover {
-            background-color: #1e7e34;
+            background: linear-gradient(45deg, #20c997, #28a745);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+        }
+
+        .redirect-button {
+            background: linear-gradient(45deg, #007bff, #6f42c1);
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .redirect-button:hover {
+            background: linear-gradient(45deg, #6f42c1, #007bff);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
         }
 
         .telegram-button {
-            background-color: #0088cc;
+            background: linear-gradient(45deg, #0088cc, #229ed9);
             color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
         }
 
         .telegram-button:hover {
-            background-color: #006699;
+            background: linear-gradient(45deg, #229ed9, #0088cc);
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Pulse animation for buttons */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(66, 165, 245, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(66, 165, 245, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(66, 165, 245, 0); }
+        }
+
+        .button-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .container {
+                margin: 20px;
+                padding: 30px 20px;
+                max-width: none;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .button {
+                min-width: 250px;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* Loading animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="rainbow-text">Thông báo 🔔 Notice 🔔</h1>
-        <p class="rainbow-text">Trang web hiện tại đã dừng hoạt động. Vui lòng truy cập vào trang web mới để tiếp tục.<br>
-        The current website has stopped working. Please visit the new website to continue.</p>
-        <a href="https://appstorepreview.wuaze.com" class="install-button rainbow-text button">📥 Cài đặt App</a>
-        <a href="https://shadowrocketcrackappios.blogspot.com" class="redirect-button rainbow-text button">👉 Truy cập trang mới 👈</a>
-        <a href="https://t.me/shadowrocketunlockproapps" class="telegram-button rainbow-text button" target="_blank">🆕 Tham Gia Nhóm Telegram Để Được Hỗ Trợ</a>
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
     </div>
+
+    <!-- Animated background particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <h1 class="rainbow-text">
+            Thông báo Notice
+        </h1>
+        
+        <p class="rainbow-text">
+            <strong>Trang web hiện tại đã dừng hoạt động. Vui lòng truy cập vào trang web mới để tiếp tục.</strong><br><br>
+            <em>The current website has stopped working. Please visit the new website to continue.</em>
+        </p>
+        
+        <div class="button-container">
+            <a href="https://appstorepreview.wuaze.com" class="button install-button rainbow-text">
+                📥 Cài đặt App
+            </a>
+            
+            <a href="https://shadowrocketcrackappios.blogspot.com" class="button redirect-button rainbow-text button-pulse">
+                👉 Truy cập trang mới 👈
+            </a>
+            
+            <a href="https://t.me/shadowrocketunlockproapps" class="button telegram-button rainbow-text" target="_blank">
+                🆕 Tham Gia Nhóm Telegram
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Remove loading overlay after page loads
+        window.addEventListener('load', function() {
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            setTimeout(() => {
+                loadingOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    loadingOverlay.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Enhanced particle creation with different shapes
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 80;
+            const shapes = ['circle', 'square', 'triangle'];
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
+                
+                particle.className = `particle ${shapeType}`;
+                
+                // Random position
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Random animation properties
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 6 + 4) + 's';
+                
+                // Random size variation
+                const scale = 0.5 + Math.random() * 1.5;
+                particle.style.transform = `scale(${scale})`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize particles and additional features
+        createParticles();
+
+        // Add click sound effect (optional)
+        function playClickSound() {
+            // You can add audio here if needed
+            console.log('Button clicked!');
+        }
+
+        // Add click handlers for buttons
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                playClickSound();
+                
+                // Add ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.pointerEvents = 'none';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
